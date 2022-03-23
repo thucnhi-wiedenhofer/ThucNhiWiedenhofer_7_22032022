@@ -32,79 +32,56 @@
             <div class="filters mb-5">
 
                 <div id="ingredients" class="dropdown">
-                    <button class="btn btn-primary dropdown-button" type="button" aria-haspopup="true">Ingrédients
+                    <button class="dropdown-button bg-primary" type="button" aria-haspopup="true">Ingrédients
                         <span class="down-icon"></span>
                     </button>
-                    <ul class="dropdown-menu primary" aria-expanded="false">
-                        <li><span class="up-icon"></span></li>
-
-                    </ul>
+                    <div class="dropdown-menu bg-primary" aria-expanded="false">
+                        <div class="dropdown-form">
+                            <input class="bg-primary" type="text" placeholder="Rechercher un ingrédient">
+                            <span class="up-icon"></span>
+                        </div>
+                        <ul>
+                            <li>dffff</li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="appliances"></div>
-                <div id="tools"></div>
+
+                <div id="appliances" class="dropdown m-3">
+                    <button class="dropdown-button bg-success" type="button" aria-haspopup="true">Appareils
+                        <span class="down-icon"></span>
+                    </button>
+                    <div class="dropdown-menu bg-success" aria-expanded="false">
+                        <div class="dropdown-form">
+                            <input class="bg-success" type="text" placeholder="Rechercher un appareil">
+                            <span class="up-icon"></span>
+                        </div>
+                        <ul>
+                            <li>dffff</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="tools" class="dropdown">
+                    <button class="dropdown-button bg-warning" type="button" aria-haspopup="true">Ustensiles
+                        <span class="down-icon"></span>
+                    </button>
+                    <div class="dropdown-menu bg-warning" aria-expanded="false">
+                        <div class="dropdown-form">
+                            <input class="bg-warning" type="text" placeholder="Rechercher un ustensile">
+                            <span class="up-icon"></span>
+                        </div>
+                        <ul>
+                            <li>dffff</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="recipes" class="recipes-section">
             <div class="recipe-card">
-                <div class="card-header">
-                    <img src="./assets/images/image_blanck.png" alt="picture to download">
-                    <div class="title">
-                        <h2>lorem10</h2>
-                        <span>
-                            <img src="./assets/images/clock.svg" alt="clock icon">
-                            temps
-                        </span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="text">
-                        <ul class="ingredients">
-                            <li></li>
-                        </ul>
-                        <p class="instructions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem
-                            accusantium eveniet quod libero, totam provident, expedita quis iure voluptatibus quae ut
-                            cupiditate enim ipsum tempora non quibusdam est velit obcaecati voluptate. Fugit assumenda
-                            est nisi illo? Quasi amet, fugit nobis velit, commodi laborum earum laboriosam deleniti
-                            vitae corrupti, tempora adipisci totam quam saepe soluta. Nulla et earum maxime ab eligendi
-                            adipisci vel at aliquam perferendis illo aliquid perspiciatis natus, nostrum, iure expedita
-                            fuga! Illum minus, similique iusto, at odio, ullam temporibus accusantium cum eos assumenda
-                            id soluta quia cupiditate voluptatum. Labore tempore, tenetur odit consectetur at asperiores
-                            iure deserunt.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="card-header">
-                    <img src="./assets/images/image_blanck.png" alt="picture to download">
-                    <div class="title">
-                        <h2>lorem10</h2>
-                        <span>
-                            <img src="./assets/images/clock.svg" alt="clock icon">
-                            temps
-                        </span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="text">
-                        <ul class="ingredients">
-                            <li></li>
-                        </ul>
-                        <p class="instructions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem
-                            accusantium eveniet quod libero, totam provident, expedita quis iure voluptatibus quae ut
-                            cupiditate enim ipsum tempora non quibusdam est velit obcaecati voluptate. Fugit assumenda
-                            est nisi illo? Quasi amet, fugit nobis velit, commodi laborum earum laboriosam deleniti
-                            vitae corrupti, tempora adipisci totam quam saepe soluta. Nulla et earum maxime ab eligendi
-                            adipisci vel at aliquam perferendis illo aliquid perspiciatis natus, nostrum, iure expedita
-                            fuga! Illum minus, similique iusto, at odio, ullam temporibus accusantium cum eos assumenda
-                            id soluta quia cupiditate voluptatum. Labore tempore, tenetur odit consectetur at asperiores
-                            iure deserunt.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="card-header">
-                    <img src="./assets/images/image_blanck.png" alt="picture to download">
+                <div class="recipe-card-header">
+                    <img src="./assets/images/image_blanck.png" alt="picture of recipe to download">
                 </div>
                 <div class="card-title">
                     <h2>lorem10</h2>
@@ -115,20 +92,78 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="text">
-                        <ul class="ingredients">
-                            <li>lorem10</li>
-                        </ul>
-                        <p class="instructions">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem
-                            accusantium eveniet quod libero, totam provident, expedita quis iure voluptatibus quae ut
-                            cupiditate enim ipsum tempora non quibusdam est velit obcaecati voluptate. Fugit assumenda
-                            est nisi illo? Quasi amet, fugit nobis velit, commodi laborum earum laboriosam deleniti
-                            vitae corrupti, tempora adipisci totam quam saepe soluta. Nulla et earum maxime ab eligendi
-                            adipisci vel at aliquam perferendis illo aliquid perspiciatis natus, nostrum, iure expedita
-                            fuga! Illum minus, similique iusto, at odio, ullam temporibus accusantium cum eos assumenda
-                            id soluta quia cupiditate voluptatum. Labore tempore, tenetur odit consectetur at asperiores
-                            iure deserunt.</p>
-                    </div>
+                    <ul class="ingredients col-5">
+                        <li>lorem10</li>
+                    </ul>
+                    <p class="instructions col-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                        dolorem
+                        accusantium eveniet quod libero, totam provident, expedita quis iure voluptatibus quae ut
+                        cupiditate enim ipsum tempora non quibusdam est velit obcaecati voluptate. Fugit assumenda
+                        est nisi illo? Quasi amet, fugit nobis velit, commodi laborum earum laboriosam deleniti
+                        vitae corrupti, tempora adipisci totam quam saepe soluta. Nulla et earum maxime ab eligendi
+                        adipisci vel at aliquam perferendis illo aliquid perspiciatis natus, nostrum, iure expedita
+                        fuga! Illum minus, similique iusto, at odio, ullam temporibus accusantium cum eos assumenda
+                        id soluta quia cupiditate voluptatum. Labore tempore, tenetur odit consectetur at asperiores
+                        iure deserunt.</p>
+
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-card-header">
+                    <img src="./assets/images/image_blanck.png" alt="picture of recipe to download">
+                </div>
+                <div class="card-title">
+                    <h2>lorem10</h2>
+                    <span>
+                        <img src="./assets/images/clock.svg" alt="clock icon">
+                        temps
+                    </span>
+                </div>
+
+                <div class="card-body">
+                    <ul class="ingredients col-5">
+                        <li>lorem10</li>
+                    </ul>
+                    <p class="instructions col-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                        dolorem
+                        accusantium eveniet quod libero, totam provident, expedita quis iure voluptatibus quae ut
+                        cupiditate enim ipsum tempora non quibusdam est velit obcaecati voluptate. Fugit assumenda
+                        est nisi illo? Quasi amet, fugit nobis velit, commodi laborum earum laboriosam deleniti
+                        vitae corrupti, tempora adipisci totam quam saepe soluta. Nulla et earum maxime ab eligendi
+                        adipisci vel at aliquam perferendis illo aliquid perspiciatis natus, nostrum, iure expedita
+                        fuga! Illum minus, similique iusto, at odio, ullam temporibus accusantium cum eos assumenda
+                        id soluta quia cupiditate voluptatum. Labore tempore, tenetur odit consectetur at asperiores
+                        iure deserunt.</p>
+
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-card-header">
+                    <img src="./assets/images/image_blanck.png" alt="picture of recipe to download">
+                </div>
+                <div class="card-title">
+                    <h2>lorem10</h2>
+                    <span>
+                        <img src="./assets/images/clock.svg" alt="clock icon">
+                        temps
+                    </span>
+                </div>
+
+                <div class="card-body">
+                    <ul class="ingredients col-5">
+                        <li>lorem10</li>
+                    </ul>
+                    <p class="instructions col-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                        dolorem
+                        accusantium eveniet quod libero, totam provident, expedita quis iure voluptatibus quae ut
+                        cupiditate enim ipsum tempora non quibusdam est velit obcaecati voluptate. Fugit assumenda
+                        est nisi illo? Quasi amet, fugit nobis velit, commodi laborum earum laboriosam deleniti
+                        vitae corrupti, tempora adipisci totam quam saepe soluta. Nulla et earum maxime ab eligendi
+                        adipisci vel at aliquam perferendis illo aliquid perspiciatis natus, nostrum, iure expedita
+                        fuga! Illum minus, similique iusto, at odio, ullam temporibus accusantium cum eos assumenda
+                        id soluta quia cupiditate voluptatum. Labore tempore, tenetur odit consectetur at asperiores
+                        iure deserunt.</p>
+
                 </div>
             </div>
         </section>
