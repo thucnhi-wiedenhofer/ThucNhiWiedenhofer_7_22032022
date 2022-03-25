@@ -1,0 +1,17 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript"
+  ],
+  "eslint.nodePath": "D:\\Pojets_OC\\ThucNhiWiedenhofer_7_22032022\node_modules",
+  "eslint.run": "onSave",
+  "eslint.workingDirectories": [
+    "back",
+    "front"
+  ],
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "liveServer.settings.port": 5501
+}

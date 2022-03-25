@@ -141,7 +141,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap:10px;
+    gap: 30px;
 }
 
 .recipe-card {
@@ -170,15 +170,16 @@ header {
     font-size: 18px;
     font-weight: bold;
     text-align: start;
+    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     margin-top: 10px;
-    width: 75%;
+    width: 70%;
 }
 
 .card-title span {
     text-align: end;
-    width:25%;
+    width:20%;
 }
 
 .card-body {
