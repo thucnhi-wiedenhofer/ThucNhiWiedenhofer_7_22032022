@@ -186,7 +186,10 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 12px;
+    font-size: 12px;    
+    overflow-y: hidden;
+    height: 178px;
+    padding-top: 5px;
 }
 
 .card-body ul {
@@ -203,5 +206,4 @@ header {
     text-overflow: ellipsis;
     overflow: hidden;
     font-family: 'Roboto', sans-serif; 
-    margin-left: 10px;  
 }

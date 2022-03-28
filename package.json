@@ -1,11 +1,10 @@
 {
   "name": "thucnhiwiedenhofer_7_22032022",
   "version": "1.0.0",
-  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "description": "Rien à installer, il suffit d'ouvrir le fichier 'index.html'.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,8 +16,9 @@
   "bugs": {
     "url": "https://github.com/thucnhi-wiedenhofer/ThucNhiWiedenhofer_7_22032022/issues"
   },
+  "homepage": "https://github.com/thucnhi-wiedenhofer/ThucNhiWiedenhofer_7_22032022#readme",
   "devDependencies": {
-    "eslint": "^8.11.0",
+    "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4"
   }

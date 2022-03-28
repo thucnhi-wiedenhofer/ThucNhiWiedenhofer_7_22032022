@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58d69162-fcca-4439-a6e9-387ca256851d" name="Changes" comment="" />
+    <list default="true" id="58d69162-fcca-4439-a6e9-387ca256851d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/recipeCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/factories/ingredientFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/factories/ingredientFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/models/recipeCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/models/recipeCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/pages/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,9 +33,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ThucNhiWiedenhofer_6_10022022" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -37,6 +49,9 @@
       <updated>1648227074388</updated>
       <workItem from="1648227076536" duration="57000" />
       <workItem from="1648227139222" duration="59000" />
+      <workItem from="1648290330498" duration="19000" />
+      <workItem from="1648376195749" duration="16000" />
+      <workItem from="1648392361710" duration="10000" />
     </task>
     <servers />
   </component>

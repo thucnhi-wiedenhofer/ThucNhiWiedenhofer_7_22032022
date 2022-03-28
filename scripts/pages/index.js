@@ -27,11 +27,6 @@ async function displayRecipes(recipes) {
     const recipesModel = recipeCard(item);
     const cardDOM = recipesModel.getRecipeCard();
     recipesSection.appendChild(cardDOM);
-    const ingredientModel = ingredientFactory(item);
-    const ingredientDOM = ingredientModel.getIngredient();
-    const idIngredient = `${item.id}`;
-    const cardBody = document.getElementById(idIngredient);
-    cardBody.appendChild(ingredientDOM);
   });
 }
 
