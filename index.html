@@ -22,15 +22,19 @@
   </header>
 
   <main class="container">
+     
     <section id="search">
+      <!--  main search  -->
       <div class="search-form mb-3">
         <input class="search-input" type="text" placeholder="Rechercher une recette">
         <span class="search-loupe">
           <img src="./assets/images/search.svg" alt="loupe">
         </span>
       </div>
-      <div class="filters mb-5">
 
+      <!--  search by filters -->
+      <div class="filters mb">
+         <!--  ingredients search field -->
         <div id="ingredients" class="dropdown">
           <button class="dropdown-button bg-primary" type="button" aria-haspopup="true">Ingrédients
             <span class="down-icon"></span>
@@ -40,12 +44,12 @@
               <input class="bg-primary" type="text" placeholder="Rechercher un ingrédient">
               <span class="up-icon"></span>
             </div>
-            <ul>
-              <li>dffff</li>
+            <ul id="ingredients_list">
             </ul>
           </div>
         </div>
 
+         <!--  appliances search field -->
         <div id="appliances" class="dropdown m-3">
           <button class="dropdown-button bg-success" type="button" aria-haspopup="true">Appareils
             <span class="down-icon"></span>
@@ -55,12 +59,12 @@
               <input class="bg-success" type="text" placeholder="Rechercher un appareil">
               <span class="up-icon"></span>
             </div>
-            <ul>
-              <li>dffff</li>
+            <ul id="appliances_list">
             </ul>
           </div>
         </div>
 
+        <!--  ustensils search field -->
         <div id="ustensils" class="dropdown">
           <button class="dropdown-button bg-warning" type="button" aria-haspopup="true">Ustensiles
             <span class="down-icon"></span>
@@ -70,14 +74,14 @@
               <input class="bg-warning" type="text" placeholder="Rechercher un ustensile">
               <span class="up-icon"></span>
             </div>
-            <ul>
-              <li>dffff</li>
+            <ul id="ustensils_list">
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Section recipes cards -->
     <section id="recipes" class="recipes-section">
 
     </section>

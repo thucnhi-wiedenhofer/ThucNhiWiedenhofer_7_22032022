@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 function recipeCard(data) {
   const {
-    id, name, time, description, ingredients
+    id, name, time, description, ingredients,
   } = data;
 
   function getRecipeCard() {
@@ -13,7 +13,7 @@ function recipeCard(data) {
     const cardHeader = document.createElement('div');
     cardHeader.className = 'recipe-card-header';
     const img = document.createElement('img');
-    img.setAttribute('src', `./assets/images/image_blanck.png`);
+    img.setAttribute('src', './assets/images/image_blanck.png');
     img.setAttribute('alt', `picture of recipe ${name} to download `);
     cardHeader.appendChild(img);
 
@@ -25,7 +25,7 @@ function recipeCard(data) {
     span.textContent = `${time} min`;
     const icon = document.createElement('img');
     icon.setAttribute('src', './assets/images/clock.svg');
-    icon.setAttribute('alt', `clock icon`);
+    icon.setAttribute('alt', 'clock icon');
     cardTitle.appendChild(h2);
     cardTitle.appendChild(icon);
     cardTitle.appendChild(span);
@@ -35,6 +35,9 @@ function recipeCard(data) {
     const ul = document.createElement('ul');
     ul.className = 'ingredients col-6';
     cardBody.appendChild(ul);
+
+    let quantity;
+    let unit;
     for (let i = 0; i < ingredients.length; i += 1) {
       const li = document.createElement('li');
 
