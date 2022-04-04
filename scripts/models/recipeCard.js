@@ -73,3 +73,5 @@ function recipeCard(data) {
   }
   return { getRecipeCard };
 }
+
+export default recipeCard;

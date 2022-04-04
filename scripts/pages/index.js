@@ -1,7 +1,13 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/extensions */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
+import recipeCard from '../models/recipeCard.js';
+import mainSearch from '../functions/mainSearch.js';
+
 // eslint-disable-next-line consistent-return
-async function getRecipes() {
+export async function getRecipes() {
   // get recipes from recipes.json
   try {
     const response = await fetch('./data/recipes.json');
@@ -13,7 +19,7 @@ async function getRecipes() {
 }
 
 // Function to display recipes cards in landing page
-async function displayRecipes(recipes) {
+export function displayRecipes(recipes) {
   const recipesSection = document.querySelector('.recipes-section');
 
   recipes.forEach((item) => {
@@ -32,19 +38,39 @@ function getIngredients(recipes) {
       ingredientsList.add(item.ingredient.toLowerCase());
     });
   });
-  console.log(ingredientsList);
   return ingredientsList;
 }
 
 // function to display all ingredients in field
 function displayIngredientsField(ingredientsList) {
   const ingredientsUl = document.getElementById('ingredients_list');
-  ingredientsList.forEach((element) => {
+  const ingredientsArray = [...ingredientsList];
+  if (ingredientsArray.length > 30) {
+    ingredientsArray.length = 30;
+  } else {
+    ingredientsArray.slice();
+  }
+  ingredientsArray.forEach((element) => {
     const li = document.createElement('li');
+    li.setAttribute('id', element);
     li.textContent = element;
     ingredientsUl.appendChild(li);
   });
 }
+/* When the user clicks, toggle between hiding and showing the dropdown content */
+function closeIngredientsField() {
+  document.getElementById('ingredients_menu').classList.remove('show');
+}
+
+function openIngredientsField() {
+  document.getElementById('ingredients_menu').classList.toggle('show');
+  window.addEventListener('click', closeIngredientsField);
+}
+
+document.getElementById('dropdown_ingredients').addEventListener('click', (event) => {
+  openIngredientsField();
+  event.stopPropagation();
+});
 
 // Function to get all appliances
 function getAppliances(recipes) {
@@ -53,19 +79,40 @@ function getAppliances(recipes) {
   recipes.forEach((item) => {
     appliancesList.add(item.appliance.toLowerCase());
   });
-  console.log(appliancesList);
   return appliancesList;
 }
 
 // function to display all appliances in field
 function displayAppliancesField(appliancesList) {
   const appliancesUl = document.getElementById('appliances_list');
-  appliancesList.forEach((element) => {
+  const appliancesArray = [...appliancesList];
+  if (appliancesArray.length > 30) {
+    appliancesArray.length = 30;
+  } else {
+    appliancesArray.slice();
+  }
+  appliancesArray.forEach((element) => {
     const li = document.createElement('li');
+    li.setAttribute('id', element);
     li.textContent = element;
     appliancesUl.appendChild(li);
   });
 }
+
+/* When the user clicks, toggle between hiding and showing the dropdown content */
+function closeAppliancesField() {
+  document.getElementById('appliances_menu').classList.remove('show');
+}
+
+function openAppliancesField() {
+  document.getElementById('appliances_menu').classList.toggle('show');
+  window.addEventListener('click', closeAppliancesField);
+}
+
+document.getElementById('dropdown_appliances').addEventListener('click', (event) => {
+  openAppliancesField();
+  event.stopPropagation();
+});
 
 // Function to get all ustensils
 function getUstensils(recipes) {
@@ -76,19 +123,41 @@ function getUstensils(recipes) {
       ustensilsList.add(item.toLowerCase());
     });
   });
-  console.log(ustensilsList);
   return ustensilsList;
 }
 
-// function to display all ingredients in field
+// function to display all ustensils in field
 function displayUstensilsField(ustensilsList) {
   const ustensilsUl = document.getElementById('ustensils_list');
-  ustensilsList.forEach((element) => {
+  // convert set in array and display only 30:
+  const ustensilsArray = [...ustensilsList];
+  if (ustensilsArray.length > 30) {
+    ustensilsArray.length = 30;
+  } else {
+    ustensilsArray.slice();
+  }
+  ustensilsArray.forEach((element) => {
     const li = document.createElement('li');
+    li.setAttribute('id', element);
     li.textContent = element;
     ustensilsUl.appendChild(li);
   });
 }
+
+/* When the user clicks, toggle between hiding and showing the dropdown content */
+function closeUstensilsField() {
+  document.getElementById('ustensils_menu').classList.remove('show');
+}
+
+function openUstensilsField() {
+  document.getElementById('ustensils_menu').classList.toggle('show');
+  window.addEventListener('click', closeUstensilsField);
+}
+
+document.getElementById('dropdown_ustensils').addEventListener('click', (event) => {
+  openUstensilsField();
+  event.stopPropagation();
+});
 
 async function init() {
   try {

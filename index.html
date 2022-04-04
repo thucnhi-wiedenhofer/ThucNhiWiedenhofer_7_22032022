@@ -25,56 +25,56 @@
      
     <section id="search">
       <!--  main search  -->
-      <div class="search-form mb-3">
-        <input class="search-input" type="text" placeholder="Rechercher une recette">
+      <div class="search-form mb-4">
+        <input id="search_input" class="search-input" type="text" placeholder="Rechercher une recette">
         <span class="search-loupe">
           <img src="./assets/images/search.svg" alt="loupe">
         </span>
       </div>
 
       <!--  search by filters -->
-      <div class="filters mb">
+      <div class="filters mb-5">
          <!--  ingredients search field -->
-        <div id="ingredients" class="dropdown">
-          <button class="dropdown-button bg-primary" type="button" aria-haspopup="true">Ingrédients
+        <div class="dropdown">
+          <button id="dropdown_ingredients" class="dropdown-button bg-primary" type="button">Ingrédients
             <span class="down-icon"></span>
           </button>
-          <div class="dropdown-menu bg-primary" aria-expanded="false">
+          <div class="dropdown-menu bg-primary" id="ingredients_menu">
             <div class="dropdown-form">
               <input class="bg-primary" type="text" placeholder="Rechercher un ingrédient">
               <span class="up-icon"></span>
             </div>
-            <ul id="ingredients_list">
+            <ul id="ingredients_list" class="field-list">
             </ul>
           </div>
         </div>
 
          <!--  appliances search field -->
-        <div id="appliances" class="dropdown m-3">
-          <button class="dropdown-button bg-success" type="button" aria-haspopup="true">Appareils
+        <div class="dropdown mx-3">
+          <button id="dropdown_appliances" class="dropdown-button bg-success" type="button">Appareils
             <span class="down-icon"></span>
           </button>
-          <div class="dropdown-menu bg-success" aria-expanded="false">
+          <div class="dropdown-menu bg-success" id="appliances_menu">
             <div class="dropdown-form">
               <input class="bg-success" type="text" placeholder="Rechercher un appareil">
               <span class="up-icon"></span>
             </div>
-            <ul id="appliances_list">
+            <ul id="appliances_list" class="field-list">
             </ul>
           </div>
         </div>
 
         <!--  ustensils search field -->
-        <div id="ustensils" class="dropdown">
-          <button class="dropdown-button bg-warning" type="button" aria-haspopup="true">Ustensiles
+        <div class="dropdown">
+          <button id="dropdown_ustensils" class="dropdown-button bg-warning" type="button">Ustensiles
             <span class="down-icon"></span>
           </button>
-          <div class="dropdown-menu bg-warning" aria-expanded="false">
+          <div class="dropdown-menu bg-warning" id="ustensils_menu">
             <div class="dropdown-form">
               <input class="bg-warning" type="text" placeholder="Rechercher un ustensile">
               <span class="up-icon"></span>
             </div>
-            <ul id="ustensils_list">
+            <ul id="ustensils_list" class="field-list">
             </ul>
           </div>
         </div>
@@ -86,11 +86,12 @@
 
     </section>
   </main>
-
-  <!-- Models -->
-  <script src="./scripts/models/recipeCard.js"></script>
+  
+  
   <!-- Pages -->
-  <script src="./scripts/pages/index.js"></script>
+  <script src="./scripts/pages/index.js" type="module"></script>
+  
+
 
 </body>
 
