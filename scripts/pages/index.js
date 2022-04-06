@@ -4,7 +4,7 @@
 /* eslint-disable no-undef */
 
 import recipeCard from '../models/recipeCard.js';
-import mainSearch from '../functions/mainSearch.js';
+import { noResult } from '../functions/mainSearch.js';
 
 // eslint-disable-next-line consistent-return
 export async function getRecipes() {
@@ -22,15 +22,20 @@ export async function getRecipes() {
 export function displayRecipes(recipes) {
   const recipesSection = document.querySelector('.recipes-section');
 
-  recipes.forEach((item) => {
-    const recipesModel = recipeCard(item);
-    const cardDOM = recipesModel.getRecipeCard();
-    recipesSection.appendChild(cardDOM);
-  });
+  if (recipes.length < 1) {
+    // display alert message if no result
+    noResult();
+  } else {
+    recipes.forEach((item) => {
+      const recipesModel = recipeCard(item);
+      const cardDOM = recipesModel.getRecipeCard();
+      recipesSection.appendChild(cardDOM);
+    });
+  }
 }
 
 // Function to get all ingredients
-function getIngredients(recipes) {
+export function getIngredients(recipes) {
   const ingredientsList = new Set();
 
   recipes.forEach((elt) => {
@@ -42,7 +47,7 @@ function getIngredients(recipes) {
 }
 
 // function to display all ingredients in field
-function displayIngredientsField(ingredientsList) {
+export function displayIngredientsField(ingredientsList) {
   const ingredientsUl = document.getElementById('ingredients_list');
   const ingredientsArray = [...ingredientsList];
   if (ingredientsArray.length > 30) {
@@ -73,7 +78,7 @@ document.getElementById('dropdown_ingredients').addEventListener('click', (event
 });
 
 // Function to get all appliances
-function getAppliances(recipes) {
+export function getAppliances(recipes) {
   const appliancesList = new Set();
 
   recipes.forEach((item) => {
@@ -83,7 +88,7 @@ function getAppliances(recipes) {
 }
 
 // function to display all appliances in field
-function displayAppliancesField(appliancesList) {
+export function displayAppliancesField(appliancesList) {
   const appliancesUl = document.getElementById('appliances_list');
   const appliancesArray = [...appliancesList];
   if (appliancesArray.length > 30) {
@@ -115,7 +120,7 @@ document.getElementById('dropdown_appliances').addEventListener('click', (event)
 });
 
 // Function to get all ustensils
-function getUstensils(recipes) {
+export function getUstensils(recipes) {
   const ustensilsList = new Set();
 
   recipes.forEach((elt) => {
@@ -127,7 +132,7 @@ function getUstensils(recipes) {
 }
 
 // function to display all ustensils in field
-function displayUstensilsField(ustensilsList) {
+export function displayUstensilsField(ustensilsList) {
   const ustensilsUl = document.getElementById('ustensils_list');
   // convert set in array and display only 30:
   const ustensilsArray = [...ustensilsList];
@@ -159,7 +164,7 @@ document.getElementById('dropdown_ustensils').addEventListener('click', (event) 
   event.stopPropagation();
 });
 
-async function init() {
+export async function init() {
   try {
     // get data from recipes and display:
     const { recipes } = await getRecipes();
