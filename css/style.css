@@ -165,6 +165,16 @@ header {
   margin: 10px;
 }
 
+.badge {
+  font-size: 14p;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.badge i {
+  width: 20px;
+}
+
 /*************section recipes *********** */
 
 .recipes-section {

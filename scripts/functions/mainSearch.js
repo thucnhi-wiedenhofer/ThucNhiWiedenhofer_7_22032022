@@ -17,12 +17,12 @@ const { recipes } = await getRecipes();
 const searchInput = document.querySelector('#search_input');
 
 // reset recipes cards
-function resetDisplayRecipes() {
+export function resetDisplayRecipes() {
   document.querySelector('.recipes-section').innerHTML = '';
 }
 
 // reset filters field
-function resetDisplayFilters() {
+export function resetDisplayFilters() {
   document.querySelector('#ingredients_list').innerHTML = '';
   document.querySelector('#appliances_list').innerHTML = '';
   document.querySelector('#ustensils_list').innerHTML = '';
@@ -74,5 +74,3 @@ function mainSearch(e) {
     init();
   }
 }
-
-export default mainSearch;

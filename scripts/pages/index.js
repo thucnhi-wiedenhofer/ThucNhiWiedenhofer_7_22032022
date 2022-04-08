@@ -5,6 +5,7 @@
 
 import recipeCard from '../models/recipeCard.js';
 import { noResult } from '../functions/mainSearch.js';
+import { searchIngredients } from '../functions/searchByFilter.js';
 
 // eslint-disable-next-line consistent-return
 export async function getRecipes() {
@@ -59,6 +60,7 @@ export function displayIngredientsField(ingredientsList) {
     const li = document.createElement('li');
     li.setAttribute('id', element);
     li.textContent = element;
+    li.className = 'bg-primary';
     ingredientsUl.appendChild(li);
   });
 }
@@ -100,6 +102,7 @@ export function displayAppliancesField(appliancesList) {
     const li = document.createElement('li');
     li.setAttribute('id', element);
     li.textContent = element;
+    li.className = 'bg-success';
     appliancesUl.appendChild(li);
   });
 }
@@ -145,6 +148,10 @@ export function displayUstensilsField(ustensilsList) {
     const li = document.createElement('li');
     li.setAttribute('id', element);
     li.textContent = element;
+    /* li.setAttribute(
+      'onclick',
+      `displayTag('${element}', 'bg-warning'); searchByTag();`,
+    ); */
     ustensilsUl.appendChild(li);
   });
 }
