@@ -4,14 +4,16 @@
 import {
   getRecipes,
   displayRecipes,
+  init,
+} from '../pages/index.js';
+import {
   getIngredients,
   displayIngredientsField,
   getAppliances,
   displayAppliancesField,
   getUstensils,
   displayUstensilsField,
-  init,
-} from '../pages/index.js';
+} from '../pages/displayFilterFields.js';
 
 const { recipes } = await getRecipes();
 const searchInput = document.querySelector('#search_input');

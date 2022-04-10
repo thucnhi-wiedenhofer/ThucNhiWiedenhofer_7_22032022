@@ -1,30 +1,21 @@
 /* eslint-disable import/extensions */
+import { getRecipes, displayRecipes } from '../pages/index.js';
 import {
-  getRecipes,
-  displayRecipes,
   getIngredients,
   displayIngredientsField,
   getAppliances,
   displayAppliancesField,
   getUstensils,
   displayUstensilsField,
-  init,
-} from '../pages/index.js';
+} from '../pages/displayFilterFields.js';
 
-import { resetDisplayRecipes, resetDisplayFilters } from './mainSearch';
+import { resetDisplayRecipes, resetDisplayFilters } from './mainSearch.js';
 
 const { recipes } = await getRecipes();
-const { element } = init();
-const keyWord = document.getElementById(element);
 const tag = document.getElementById('tags');
-keyWord.addEventListener('click', () => {
-  // eslint-disable-next-line no-use-before-define
-  displayTag();
-  // eslint-disable-next-line no-use-before-define
-  searchByTag();
-});
+
 // eslint-disable-next-line no-unused-vars
-function displayTag(e, classe) {
+export function displayTag(e, classe) {
   const span = document.createElement('span');
   span.textContent(e.target.value);
   span.className = `badge ${classe}`;
@@ -36,7 +27,7 @@ function displayTag(e, classe) {
   tag.appendChild(span);
 }
 
-function searchByTag(e) {
+export function searchByTag(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   recipes.forEach((recipe) => {
@@ -58,4 +49,3 @@ function searchByTag(e) {
     displayUstensilsField(ustensilsList);
   });
 }
-export default searchByTag;

@@ -1,14 +1,14 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
+import { getRecipes } from '../pages/index.js';
 import {
-  getRecipes,
   getIngredients,
   displayIngredientsField,
   getAppliances,
   displayAppliancesField,
   getUstensils,
   displayUstensilsField,
-} from '../pages/index.js';
+} from '../pages/displayFilterFields.js';
 
 const { recipes } = await getRecipes();
 const ingredientsList = getIngredients(recipes);
@@ -23,6 +23,7 @@ export function searchIngredients(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   ingredientsList.forEach((el) => {
+    // extract el from the first character to the last if el is identic to searchString:
     if (el.toLowerCase().substr(0, searchedString.length) === searchedString) {
       results.push(el);
     }
