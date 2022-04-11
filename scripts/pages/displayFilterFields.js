@@ -30,20 +30,31 @@ export function displayIngredientsField(ingredientsList) {
     ingredientsUl.appendChild(li);
   });
 }
-/* When the user clicks, toggle between hiding and showing the dropdown content */
-function closeIngredientsField() {
-  document.getElementById('ingredients_menu').classList.remove('show');
-}
 
+/* When the user clicks, toggle between hiding and showing the dropdown content */
 function openIngredientsField() {
   document.getElementById('ingredients_menu').classList.toggle('show');
-  window.addEventListener('click', closeIngredientsField);
 }
+document.getElementById('dropdown_ingredients').addEventListener('click', openIngredientsField);
 
-document.getElementById('dropdown_ingredients').addEventListener('click', (event) => {
-  openIngredientsField();
+// Prevents menu from closing when clicked inside:
+document.getElementById('ingredients_menu').addEventListener('click', (event) => {
   event.stopPropagation();
 });
+
+// Closes the menu in the event of outside click
+window.onclick = function close(event) {
+  if (!event.target.matches('.dropdown-button')) {
+    const dropdowns = document.getElementsByClassName('dropdown-menu');
+    let i;
+    for (i = 0; i < dropdowns.length; i += 1) {
+      const opendropdown = dropdowns[i];
+      if (opendropdown.classList.contains('show')) {
+        opendropdown.classList.remove('show');
+      }
+    }
+  }
+};
 
 // Function to get all appliances
 export function getAppliances(recipes) {
@@ -77,17 +88,13 @@ export function displayAppliancesField(appliancesList) {
 }
 
 /* When the user clicks, toggle between hiding and showing the dropdown content */
-function closeAppliancesField() {
-  document.getElementById('appliances_menu').classList.remove('show');
-}
-
 function openAppliancesField() {
   document.getElementById('appliances_menu').classList.toggle('show');
-  window.addEventListener('click', closeAppliancesField);
 }
+document.getElementById('dropdown_appliances').addEventListener('click', openAppliancesField);
 
-document.getElementById('dropdown_appliances').addEventListener('click', (event) => {
-  openAppliancesField();
+// Prevents menu from closing when clicked inside:
+document.getElementById('appliances_menu').addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
@@ -126,16 +133,12 @@ export function displayUstensilsField(ustensilsList) {
 }
 
 /* When the user clicks, toggle between hiding and showing the dropdown content */
-function closeUstensilsField() {
-  document.getElementById('ustensils_menu').classList.remove('show');
-}
-
 function openUstensilsField() {
   document.getElementById('ustensils_menu').classList.toggle('show');
-  window.addEventListener('click', closeUstensilsField);
 }
+document.getElementById('dropdown_ustensils').addEventListener('click', openUstensilsField);
 
-document.getElementById('dropdown_ustensils').addEventListener('click', (event) => {
-  openUstensilsField();
+// Prevents menu from closing when clicked inside:
+document.getElementById('ustensils_menu').addEventListener('click', (event) => {
   event.stopPropagation();
 });
