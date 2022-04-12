@@ -23,7 +23,7 @@ body {
     margin-left: auto;
   }
 }
-/*************headrer*********** */
+/*************header*********** */
 header {
   display: flex !important;
   justify-content: center;
@@ -169,10 +169,19 @@ header {
   font-size: 14p;
   font-weight: bold;
   color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: fit-content;
+}
+.badge .btn{
+  padding: 0;
+}
+#tags .alert {
+  padding: 1px 10px;
 }
 
-.badge i {
-  width: 20px;
+.fa-times-circle {  
+  color:#ffffff;
 }
 
 /*************section recipes *********** */

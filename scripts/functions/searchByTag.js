@@ -15,20 +15,23 @@ const { recipes } = await getRecipes();
 const tag = document.getElementById('tags');
 
 // eslint-disable-next-line no-unused-vars
-export function displayTag(e, classe) {
+export function displayTag(element, classe) {
   const span = document.createElement('span');
-  span.textContent(e.target.value);
-  span.className = `badge ${classe}`;
+  span.textContent = element;
+  span.className = `badge ${classe} alert fade show`;
   const close = document.createElement('button');
-  close.className = 'far fa-times-circle ms-2';
+  close.className = 'btn btn-circle';
   close.setAttribute('type', 'button');
   close.setAttribute('data-bs-dismiss', 'alert');
-  tag.appendChild(close);
+  const icon = document.createElement('i');
+  icon.className = 'far fa-times-circle ms-2';
+  close.appendChild(icon);
+  span.appendChild(close);
   tag.appendChild(span);
 }
 
-export function searchByTag(e) {
-  const searchedString = e.target.value.toLowerCase();
+export function searchByTag(element) {
+  const searchedString = element;
   const results = [];
   recipes.forEach((recipe) => {
     if (
@@ -37,6 +40,7 @@ export function searchByTag(e) {
       || recipe.appliances.toLowerCase().includes(searchedString)
       || recipe.ustensils.forEach((el) => el.toLowerCase().includes(searchedString))) {
       results.push(recipe);
+      console.log(results);
     }
     resetDisplayRecipes();
     resetDisplayFilters();

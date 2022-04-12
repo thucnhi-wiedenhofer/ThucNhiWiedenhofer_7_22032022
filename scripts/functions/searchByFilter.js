@@ -23,8 +23,7 @@ export function searchIngredients(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   ingredientsList.forEach((el) => {
-    // extract el from the first character to the last if el is identic to searchString:
-    if (el.toLowerCase().substr(0, searchedString.length) === searchedString) {
+    if (el.toLowerCase().includes(searchedString)) {
       results.push(el);
     }
     document.querySelector('#ingredients_list').innerHTML = '';
@@ -40,7 +39,7 @@ export function searchAppliances(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   appliancesList.forEach((el) => {
-    if (el.toLowerCase().substr(0, searchedString.length) === searchedString) {
+    if (el.toLowerCase().includes(searchedString)) {
       results.push(el);
     }
     document.querySelector('#appliances_list').innerHTML = '';
@@ -56,7 +55,7 @@ export function searchUstensils(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   ustensilsList.forEach((el) => {
-    if (el.toLowerCase().substr(0, searchedString.length) === searchedString) {
+    if (el.toLowerCase().includes(searchedString)) {
       results.push(el);
     }
     document.querySelector('#ustensils_list').innerHTML = '';

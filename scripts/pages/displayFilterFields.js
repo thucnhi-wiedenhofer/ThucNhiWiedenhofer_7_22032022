@@ -35,7 +35,10 @@ export function displayIngredientsField(ingredientsList) {
 function openIngredientsField() {
   document.getElementById('ingredients_menu').classList.toggle('show');
 }
-document.getElementById('dropdown_ingredients').addEventListener('click', openIngredientsField);
+document.getElementById('dropdown_ingredients').addEventListener('click', () => {
+  openIngredientsField();
+  document.querySelector('#ingredients_filter').value = '';
+});
 
 // Prevents menu from closing when clicked inside:
 document.getElementById('ingredients_menu').addEventListener('click', (event) => {
@@ -90,6 +93,7 @@ export function displayAppliancesField(appliancesList) {
 /* When the user clicks, toggle between hiding and showing the dropdown content */
 function openAppliancesField() {
   document.getElementById('appliances_menu').classList.toggle('show');
+  document.querySelector('#appliances_filter').value = '';
 }
 document.getElementById('dropdown_appliances').addEventListener('click', openAppliancesField);
 
@@ -135,6 +139,7 @@ export function displayUstensilsField(ustensilsList) {
 /* When the user clicks, toggle between hiding and showing the dropdown content */
 function openUstensilsField() {
   document.getElementById('ustensils_menu').classList.toggle('show');
+  document.querySelector('#ustensils_filter').value = '';
 }
 document.getElementById('dropdown_ustensils').addEventListener('click', openUstensilsField);
 
