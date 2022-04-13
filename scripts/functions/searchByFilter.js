@@ -23,7 +23,7 @@ export function searchIngredients(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   ingredientsList.forEach((el) => {
-    if (el.toLowerCase().includes(searchedString)) {
+    if (el.includes(searchedString)) {
       results.push(el);
     }
     document.querySelector('#ingredients_list').innerHTML = '';
@@ -39,7 +39,7 @@ export function searchAppliances(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   appliancesList.forEach((el) => {
-    if (el.toLowerCase().includes(searchedString)) {
+    if (el.includes(searchedString)) {
       results.push(el);
     }
     document.querySelector('#appliances_list').innerHTML = '';
@@ -55,7 +55,7 @@ export function searchUstensils(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
   ustensilsList.forEach((el) => {
-    if (el.toLowerCase().includes(searchedString)) {
+    if (el.includes(searchedString)) {
       results.push(el);
     }
     document.querySelector('#ustensils_list').innerHTML = '';

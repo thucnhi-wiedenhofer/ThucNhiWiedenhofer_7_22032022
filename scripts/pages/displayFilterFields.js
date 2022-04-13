@@ -25,7 +25,7 @@ export function displayIngredientsField(ingredientsList) {
     li.textContent = element;
     li.setAttribute(
       'onclick',
-      `displayTag('${element}', 'bg-primary'); searchByTag();`,
+      `displayTag('${element}', 'bg-primary'); searchIngredientsByTag('${element}');`,
     );
     ingredientsUl.appendChild(li);
   });
@@ -46,7 +46,7 @@ document.getElementById('ingredients_menu').addEventListener('click', (event) =>
 });
 
 // Closes the menu in the event of outside click
-window.onclick = function close(event) {
+function close(event) {
   if (!event.target.matches('.dropdown-button')) {
     const dropdowns = document.getElementsByClassName('dropdown-menu');
     let i;
@@ -57,7 +57,8 @@ window.onclick = function close(event) {
       }
     }
   }
-};
+}
+window.addEventListener('click', close);
 
 // Function to get all appliances
 export function getAppliances(recipes) {
@@ -84,7 +85,7 @@ export function displayAppliancesField(appliancesList) {
     li.textContent = element;
     li.setAttribute(
       'onclick',
-      `displayTag('${element}', 'bg-success'); searchByTag();`,
+      `displayTag('${element}', 'bg-success'); searchAppliancesByTag('${element}');`,
     );
     appliancesUl.appendChild(li);
   });
@@ -130,7 +131,7 @@ export function displayUstensilsField(ustensilsList) {
     li.textContent = element;
     li.setAttribute(
       'onclick',
-      `displayTag('${element}', 'bg-warning'); searchByTag();`,
+      `displayTag('${element}', 'bg-warning'); searchUstensilsByTag('${element}');`,
     );
     ustensilsUl.appendChild(li);
   });
