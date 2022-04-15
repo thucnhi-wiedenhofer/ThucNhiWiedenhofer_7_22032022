@@ -25,7 +25,7 @@ export function displayIngredientsField(ingredientsList) {
     li.textContent = element;
     li.setAttribute(
       'onclick',
-      `displayTag('${element}', 'bg-primary'); searchIngredientsByTag('${element}');`,
+      `displayTag('${element}', 'bg-primary');`,
     );
     ingredientsUl.appendChild(li);
   });
@@ -85,7 +85,7 @@ export function displayAppliancesField(appliancesList) {
     li.textContent = element;
     li.setAttribute(
       'onclick',
-      `displayTag('${element}', 'bg-success'); searchAppliancesByTag('${element}');`,
+      `displayTag('${element}', 'bg-success');`,
     );
     appliancesUl.appendChild(li);
   });
@@ -131,7 +131,7 @@ export function displayUstensilsField(ustensilsList) {
     li.textContent = element;
     li.setAttribute(
       'onclick',
-      `displayTag('${element}', 'bg-warning'); searchUstensilsByTag('${element}');`,
+      `displayTag('${element}', 'bg-warning');`,
     );
     ustensilsUl.appendChild(li);
   });

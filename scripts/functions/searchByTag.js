@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import { getRecipes, displayRecipes } from '../pages/index.js';
+import { getRecipes, displayRecipes, init } from '../pages/index.js';
 import {
   getIngredients,
   displayIngredientsField,
@@ -8,94 +8,106 @@ import {
   getUstensils,
   displayUstensilsField,
 } from '../pages/displayFilterFields.js';
-
-import { resetDisplayRecipes, resetDisplayFilters } from './mainSearch.js';
+import { resetDisplayFilters, resetDisplayRecipes } from './mainSearch.js';
 
 const { recipes } = await getRecipes();
-const ingredientsList = getIngredients(recipes);
-const appliancesList = getAppliances(recipes);
-const ustensilsList = getUstensils(recipes);
-const div = document.getElementById('tags');
 
+const divTags = document.getElementById('tags');
+let tags = [];
+
+// Function to create tag each time user click on li and tag is keep in local storage
 // eslint-disable-next-line no-unused-vars
 export function displayTag(element, classe) {
+  if (localStorage.getItem('tags')) {
+    tags = JSON.parse(localStorage.getItem('tags'));
+  }
   const span = document.createElement('span');
   span.textContent = element;
+  span.setAttribute('id', element);
   span.className = `badge ${classe} alert fade show`;
   const close = document.createElement('button');
   close.className = 'btn btn-circle';
   close.setAttribute('type', 'button');
-  close.setAttribute('data-bs-dismiss', 'alert');
+  close.setAttribute('onclick', `closeTag('${element}')`);
   const icon = document.createElement('i');
   icon.className = 'far fa-times-circle ms-2';
   close.appendChild(icon);
   span.appendChild(close);
-  div.appendChild(span);
+  divTags.appendChild(span);
+
+  if (!tags.includes(element)) {
+    tags.push(element);
+    localStorage.setItem('tags', JSON.stringify(tags));
+  }
   document.getElementById('ingredients_menu').classList.remove('show');
   document.getElementById('appliances_menu').classList.remove('show');
   document.getElementById('ustensils_menu').classList.remove('show');
+  // eslint-disable-next-line no-use-before-define
+  checkTag();
 }
 
-function searchRecipesByTag(tag) {
-  const recipesArray = [];
+// dataArray is a set with all ingredients,appliances and ustensils
+function searchByTag() {
+  const filteredRecipes = [];
+
   recipes.forEach((recipe) => {
-    if (
-      recipe.appliance.toLowerCase().includes(tag)
-    // eslint-disable-next-line max-len
-    || recipe.ingredients.filter((ingredients) => ingredients.ingredient.toLowerCase().includes(tag)).length > 0
-    || recipe.ustensils.forEach((item) => { item.toLowerCase().includes(tag); })) {
-      recipesArray.push(recipe);
-    }
-    resetDisplayRecipes();
-    displayRecipes(recipesArray);
-    resetDisplayFilters();
-    const ingredients = getIngredients(recipesArray);
-    const appliances = getAppliances(recipesArray);
-    const ustensils = getUstensils(recipesArray);
-    displayIngredientsField(ingredients);
-    displayAppliancesField(appliances);
-    displayUstensilsField(ustensils);
+    const dataArray = new Set();
+    const results = [];
+    recipe.ingredients.forEach((item) => {
+      dataArray.add(item.ingredient.toLowerCase());
+    });
+    dataArray.add(recipe.appliance.toLowerCase());
+    recipe.ustensils.forEach((item) => {
+      dataArray.add(item.toLowerCase());
+
+      tags.forEach((el) => {
+        if (dataArray.has(el.toLowerCase())) {
+          results.push(dataArray.has(el.toLowerCase()));
+        }
+      });
+      if (tags.length === results.length) {
+        filteredRecipes.push(recipe);
+      }
+    });
   });
+  localStorage.setItem('tagResult', JSON.stringify(filteredRecipes));
+  return filteredRecipes;
 }
 
-export function searchIngredientsByTag(element) {
-  const searchedString = element;
-  const results = [];
-
-  ingredientsList.forEach((el) => {
-    if (el.includes(searchedString)) {
-      results.push(el);
+function checkTag() {
+  if (localStorage.getItem('tags')) {
+    tags = JSON.parse(localStorage.getItem('tags'));
+    if (tags.length > 0) {
+      const filteredRecipes = searchByTag(tags);
+      resetDisplayRecipes();
+      resetDisplayFilters();
+      displayRecipes(filteredRecipes);
+      const ingredientsList = getIngredients(filteredRecipes);
+      const appliancesList = getAppliances(filteredRecipes);
+      const ustensilsList = getUstensils(filteredRecipes);
+      displayIngredientsField(ingredientsList);
+      displayAppliancesField(appliancesList);
+      displayUstensilsField(ustensilsList);
+    } else {
+      init();
     }
-    document.querySelector('#ingredients_list').innerHTML = '';
-    displayIngredientsField(results);
-    searchRecipesByTag(results);
-  });
+  }
 }
 
-export function searchAppliancesByTag(element) {
-  const searchedString = element;
-  const results = [];
-
-  appliancesList.forEach((el) => {
-    if (el.includes(searchedString)) {
-      results.push(el);
+function removeItem(item, array) {
+  for (let i = array.length - 1; i >= 0; i -= 1) {
+    if (array[i] === item) {
+      // remove one element at index i:
+      array.splice(i, 1);
     }
-    document.querySelector('#appliances_list').innerHTML = '';
-    displayAppliancesField(results);
-    searchRecipesByTag(results);
-  });
+  }
 }
-
-export function searchUstensilsByTag(element) {
-  const searchedString = element;
-  const results = [];
-
-  ustensilsList.forEach((el) => {
-    if (el.includes(searchedString)) {
-      results.push(el);
-    }
-    document.querySelector('#ustensils_list').innerHTML = '';
-    displayUstensilsField(results);
-    searchRecipesByTag(results);
-  });
+// Function to remove tag on click and come back to the result of before
+export function closeTag(tag) {
+  tags = JSON.parse(localStorage.getItem('tags'));
+  const target = document.getElementById(tag);
+  divTags.removeChild(target);
+  removeItem(tag, tags);
+  localStorage.setItem('tags', JSON.stringify(tags));
+  checkTag();
 }

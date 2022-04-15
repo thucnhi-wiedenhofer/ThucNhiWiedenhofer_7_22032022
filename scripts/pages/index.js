@@ -13,18 +13,11 @@ import {
   displayUstensilsField,
 } from './displayFilterFields.js';
 import { noResult } from '../functions/mainSearch.js';
-import {
-  displayTag,
-  searchIngredientsByTag,
-  searchAppliancesByTag,
-  searchUstensilsByTag,
-} from '../functions/searchByTag.js';
+import { displayTag, closeTag } from '../functions/searchByTag.js';
 import { searchIngredients } from '../functions/searchByFilter.js';
 
 window.displayTag = displayTag;
-window.searchIngredientsByTag = searchIngredientsByTag;
-window.searchAppliancesByTag = searchAppliancesByTag;
-window.searchUstensilsByTag = searchUstensilsByTag;
+window.closeTag = closeTag;
 
 // eslint-disable-next-line consistent-return
 export async function getRecipes() {
