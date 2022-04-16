@@ -14,6 +14,7 @@ import {
   getUstensils,
   displayUstensilsField,
 } from '../pages/displayFilterFields.js';
+import { resetTags } from './searchByTag.js';
 
 const { recipes } = await getRecipes();
 const searchInput = document.querySelector('#search_input');
@@ -52,6 +53,8 @@ searchInput.addEventListener('input', mainSearch);
 function mainSearch(e) {
   const searchedString = e.target.value.toLowerCase();
   const results = [];
+  resetTags();
+
   // start to filter with 3 characters minimum in the input
   if (searchedString.length > 2) {
     recipes.forEach((el) => {

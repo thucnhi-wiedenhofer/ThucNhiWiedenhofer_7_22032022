@@ -47,12 +47,34 @@ export function displayTag(element, classe) {
   checkTag();
 }
 
+export function subMainSearch() {
+  let result = [];
+  const searchString = document.querySelector('#search_input').value;
+  if (searchString.length > 2) {
+    recipes.forEach((el) => {
+      if (
+        el.name.toLowerCase().includes(searchString)
+      // eslint-disable-next-line max-len
+      || el.ingredients.filter((ingredients) => ingredients.ingredient.toLowerCase().includes(searchString)).length > 0
+      || el.description.toLowerCase().includes(searchString)) {
+        result.push(el);
+      }
+    });
+  } else {
+    result = [];
+  }
+  return result;
+}
+
 // function to search recipes which need tag of ingredients or appliances or ustensils
 // For each recipe, dataArray is a set with all ingredients,appliances and ustensils needed
 function searchByTag() {
   const filteredRecipes = [];
-
-  recipes.forEach((recipe) => {
+  let filterArray = subMainSearch();
+  if (filterArray.length <= 0) {
+    filterArray = recipes;
+  }
+  filterArray.forEach((recipe) => {
     const dataArray = new Set();
     const results = [];
     recipe.ingredients.forEach((item) => {
@@ -115,4 +137,10 @@ export function closeTag(tag) {
   removeItem(tag, tags);
   localStorage.setItem('tags', JSON.stringify(tags));
   checkTag();
+}
+
+export function resetTags() {
+  localStorage.clear();
+  document.getElementById('tags').innerHTML = '';
+  tags = [];
 }

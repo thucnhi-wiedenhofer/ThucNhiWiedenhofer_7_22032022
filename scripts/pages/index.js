@@ -12,8 +12,8 @@ import {
   getUstensils,
   displayUstensilsField,
 } from './displayFilterFields.js';
-import { noResult } from '../functions/mainSearch.js';
-import { displayTag, closeTag } from '../functions/searchByTag.js';
+import { noResult, resetDisplayFilters, resetDisplayRecipes } from '../functions/mainSearch.js';
+import { displayTag, closeTag, resetTags } from '../functions/searchByTag.js';
 import { searchIngredients } from '../functions/searchByFilter.js';
 
 window.displayTag = displayTag;
@@ -54,9 +54,9 @@ export async function init() {
     const ingredientsList = getIngredients(recipes);
     const appliancesList = getAppliances(recipes);
     const ustensilsList = getUstensils(recipes);
-    localStorage.clear();
-    document.getElementById('tags').innerHTML = '';
-    console.log(tags);
+    resetDisplayFilters();
+    resetDisplayRecipes();
+    resetTags();
 
     // display recipe cards:
     displayRecipes(recipes);
