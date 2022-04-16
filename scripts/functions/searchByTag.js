@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 import { getRecipes, displayRecipes, init } from '../pages/index.js';
 import {
@@ -46,7 +47,8 @@ export function displayTag(element, classe) {
   checkTag();
 }
 
-// dataArray is a set with all ingredients,appliances and ustensils
+// function to search recipes which need tag of ingredients or appliances or ustensils
+// For each recipe, dataArray is a set with all ingredients,appliances and ustensils needed
 function searchByTag() {
   const filteredRecipes = [];
 
@@ -59,21 +61,23 @@ function searchByTag() {
     dataArray.add(recipe.appliance.toLowerCase());
     recipe.ustensils.forEach((item) => {
       dataArray.add(item.toLowerCase());
+    });
 
-      tags.forEach((el) => {
-        if (dataArray.has(el.toLowerCase())) {
-          results.push(dataArray.has(el.toLowerCase()));
-        }
-      });
-      if (tags.length === results.length) {
-        filteredRecipes.push(recipe);
+    tags.forEach((el) => {
+      if (dataArray.has(el.toLowerCase())) {
+        results.push(dataArray);
       }
     });
+    if (tags.length === results.length) {
+      filteredRecipes.push(recipe);
+    }
   });
+
   localStorage.setItem('tagResult', JSON.stringify(filteredRecipes));
   return filteredRecipes;
 }
 
+// function to check if there's tag, refresh fields and recipe cards
 function checkTag() {
   if (localStorage.getItem('tags')) {
     tags = JSON.parse(localStorage.getItem('tags'));
@@ -89,6 +93,7 @@ function checkTag() {
       displayAppliancesField(appliancesList);
       displayUstensilsField(ustensilsList);
     } else {
+      tags = [];
       init();
     }
   }

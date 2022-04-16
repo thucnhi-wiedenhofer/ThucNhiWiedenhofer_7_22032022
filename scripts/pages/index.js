@@ -54,6 +54,9 @@ export async function init() {
     const ingredientsList = getIngredients(recipes);
     const appliancesList = getAppliances(recipes);
     const ustensilsList = getUstensils(recipes);
+    localStorage.clear();
+    document.getElementById('tags').innerHTML = '';
+    console.log(tags);
 
     // display recipe cards:
     displayRecipes(recipes);
