@@ -47,6 +47,7 @@ export function displayTag(element, classe) {
   checkTag();
 }
 
+// function main search in filtred recipes by tag
 export function subMainSearch() {
   let result = [];
   const searchString = document.querySelector('#search_input').value;
@@ -71,6 +72,7 @@ export function subMainSearch() {
 function searchByTag() {
   const filteredRecipes = [];
   let filterArray = subMainSearch();
+  // if user don't enter characters on main search input, searchByTag on all recipes
   if (filterArray.length <= 0) {
     filterArray = recipes;
   }
