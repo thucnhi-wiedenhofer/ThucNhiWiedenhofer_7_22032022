@@ -17,6 +17,7 @@ import {
 import { resetTags } from './searchByTag.js';
 
 const { recipes } = await getRecipes();
+
 const searchInput = document.querySelector('#search_input');
 
 // reset recipes cards

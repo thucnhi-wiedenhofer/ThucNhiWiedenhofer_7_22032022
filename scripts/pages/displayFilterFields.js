@@ -13,12 +13,8 @@ export function getIngredients(recipes) {
 // function to display all ingredients in field
 export function displayIngredientsField(ingredientsList) {
   const ingredientsUl = document.getElementById('ingredients_list');
-  const ingredientsArray = [...ingredientsList];
-  if (ingredientsArray.length > 30) {
-    ingredientsArray.length = 30;
-  } else {
-    ingredientsArray.slice();
-  }
+  const ingredientsArray = [...ingredientsList].slice(0, 30);
+
   ingredientsArray.forEach((element) => {
     const li = document.createElement('li');
     li.setAttribute('id', element);
@@ -73,12 +69,8 @@ export function getAppliances(recipes) {
 // function to display all appliances in field
 export function displayAppliancesField(appliancesList) {
   const appliancesUl = document.getElementById('appliances_list');
-  const appliancesArray = [...appliancesList];
-  if (appliancesArray.length > 30) {
-    appliancesArray.length = 30;
-  } else {
-    appliancesArray.slice();
-  }
+  const appliancesArray = [...appliancesList].slice(0, 30);
+
   appliancesArray.forEach((element) => {
     const li = document.createElement('li');
     li.setAttribute('id', element);
@@ -119,12 +111,8 @@ export function getUstensils(recipes) {
 export function displayUstensilsField(ustensilsList) {
   const ustensilsUl = document.getElementById('ustensils_list');
   // convert set in array and display only 30:
-  const ustensilsArray = [...ustensilsList];
-  if (ustensilsArray.length > 30) {
-    ustensilsArray.length = 30;
-  } else {
-    ustensilsArray.slice();
-  }
+  const ustensilsArray = [...ustensilsList].slice(0, 30);
+
   ustensilsArray.forEach((element) => {
     const li = document.createElement('li');
     li.setAttribute('id', element);
