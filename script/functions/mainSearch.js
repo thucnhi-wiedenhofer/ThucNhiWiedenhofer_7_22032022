@@ -57,14 +57,19 @@ function mainSearch(e) {
 
   // start to filter with 3 characters minimum in the input
   if (searchedString.length > 2) {
-    recipes.forEach((el) => {
-      if (
-        el.name.toLowerCase().includes(searchedString)
-      // eslint-disable-next-line max-len
-      || el.ingredients.filter((ingredients) => ingredients.ingredient.toLowerCase().includes(searchedString)).length > 0
-      || el.description.toLowerCase().includes(searchedString)) {
-        results.push(el);
+    for (let i = 0; i < recipes.length; i += 1) {
+      if (recipes[i].name.toLowerCase().includes(searchedString)) {
+        results.push(recipes[i]);
       }
+      if (recipes[i].description.toLowerCase().includes(searchedString)) {
+        results.push(recipes[i]);
+      }
+      for (let j = 0; j < recipes[i].ingredients.length; j += 1) {
+        if (recipes[i].ingredients[j].ingredient.toLowerCase().includes(searchedString)) {
+          results.push(recipes[i]);
+        }
+      }
+
       resetDisplayRecipes();
       resetDisplayFilters();
       displayRecipes(results);
@@ -74,7 +79,7 @@ function mainSearch(e) {
       displayIngredientsField(ingredientsList);
       displayAppliancesField(appliancesList);
       displayUstensilsField(ustensilsList);
-    });
+    }
   } else {
     init();
   }

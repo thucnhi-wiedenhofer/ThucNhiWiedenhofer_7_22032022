@@ -15,20 +15,19 @@ export function getIngredients(recipes) {
 // function to display all ingredients in field
 export function displayIngredientsField(ingredientsList) {
   const ingredientsUl = document.getElementById('ingredients_list');
+  const ingredientsArray = ingredientsList;
   // display only 30:
-  if (ingredientsList.length > 30) {
-    ingredientsList.length = 30;
-  } else {
-    ingredientsList.slice();
+  if (ingredientsArray.length > 30) {
+    ingredientsArray.length = 30;
   }
 
-  for (let i = 0; i < ingredientsList.length; i += 1) {
+  for (let i = 0; i < ingredientsArray.length; i += 1) {
     const li = document.createElement('li');
-    li.setAttribute('id', ingredientsList[i]);
-    li.textContent = ingredientsList[i];
+    li.setAttribute('id', ingredientsArray[i]);
+    li.textContent = ingredientsArray[i];
     li.setAttribute(
       'onclick',
-      `displayTag('${ingredientsList[i]}', 'bg-primary');`,
+      `displayTag('${ingredientsArray[i]}', 'bg-primary');`,
     );
     ingredientsUl.appendChild(li);
   }
@@ -77,20 +76,19 @@ export function getAppliances(recipes) {
 // function to display all appliances in field
 export function displayAppliancesField(appliancesList) {
   const appliancesUl = document.getElementById('appliances_list');
+  const appliancesArray = appliancesList;
   // display only 30:
-  if (appliancesList.length > 30) {
-    appliancesList.length = 30;
-  } else {
-    appliancesList.slice();
+  if (appliancesArray.length > 30) {
+    appliancesArray.length = 30;
   }
 
-  for (let i = 0; i < appliancesList.length; i += 1) {
+  for (let i = 0; i < appliancesArray.length; i += 1) {
     const li = document.createElement('li');
-    li.setAttribute('id', appliancesList[i]);
-    li.textContent = appliancesList[i];
+    li.setAttribute('id', appliancesArray[i]);
+    li.textContent = appliancesArray[i];
     li.setAttribute(
       'onclick',
-      `displayTag('${appliancesList[i]}', 'bg-success');`,
+      `displayTag('${appliancesArray[i]}', 'bg-success');`,
     );
     appliancesUl.appendChild(li);
   }
@@ -125,20 +123,19 @@ export function getUstensils(recipes) {
 // function to display all ustensils in field
 export function displayUstensilsField(ustensilsList) {
   const ustensilsUl = document.getElementById('ustensils_list');
+  const ustensilsArray = ustensilsList;
   // display only 30:
-  if (ustensilsList.length > 30) {
-    ustensilsList.length = 30;
-  } else {
-    ustensilsList.slice();
+  if (ustensilsArray.length > 30) {
+    ustensilsArray.length = 30;
   }
 
-  for (let i = 0; i < ustensilsList.length; i += 1) {
+  for (let i = 0; i < ustensilsArray.length; i += 1) {
     const li = document.createElement('li');
-    li.setAttribute('id', ustensilsList[i]);
-    li.textContent = ustensilsList[i];
+    li.setAttribute('id', ustensilsArray[i]);
+    li.textContent = ustensilsArray[i];
     li.setAttribute(
       'onclick',
-      `displayTag('${ustensilsList[i]}', 'bg-warning');`,
+      `displayTag('${ustensilsArray[i]}', 'bg-warning');`,
     );
     ustensilsUl.appendChild(li);
   }
