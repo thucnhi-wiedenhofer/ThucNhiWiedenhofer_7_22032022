@@ -14,7 +14,7 @@ import {
 } from './displayFilterFields.js';
 import { noResult, resetDisplayFilters, resetDisplayRecipes } from '../functions/mainSearch.js';
 import { displayTag, closeTag, resetTags } from '../functions/searchByTag.js';
-import { searchIngredients } from '../functions/searchByFilter.js';
+import searchIngredients from '../functions/searchByFilter.js';
 
 window.displayTag = displayTag;
 window.closeTag = closeTag;
