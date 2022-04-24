@@ -23,7 +23,6 @@ export function displayIngredientsField(ingredientsList) {
 
   for (let i = 0; i < ingredientsArray.length; i += 1) {
     const li = document.createElement('li');
-    li.setAttribute('id', ingredientsArray[i]);
     li.textContent = ingredientsArray[i];
     li.setAttribute(
       'onclick',
@@ -84,7 +83,6 @@ export function displayAppliancesField(appliancesList) {
 
   for (let i = 0; i < appliancesArray.length; i += 1) {
     const li = document.createElement('li');
-    li.setAttribute('id', appliancesArray[i]);
     li.textContent = appliancesArray[i];
     li.setAttribute(
       'onclick',
@@ -131,7 +129,6 @@ export function displayUstensilsField(ustensilsList) {
 
   for (let i = 0; i < ustensilsArray.length; i += 1) {
     const li = document.createElement('li');
-    li.setAttribute('id', ustensilsArray[i]);
     li.textContent = ustensilsArray[i];
     li.setAttribute(
       'onclick',
