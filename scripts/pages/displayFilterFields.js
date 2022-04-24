@@ -17,7 +17,6 @@ export function displayIngredientsField(ingredientsList) {
 
   ingredientsArray.forEach((element) => {
     const li = document.createElement('li');
-    li.setAttribute('id', element);
     li.textContent = element;
     li.setAttribute(
       'onclick',
@@ -73,7 +72,6 @@ export function displayAppliancesField(appliancesList) {
 
   appliancesArray.forEach((element) => {
     const li = document.createElement('li');
-    li.setAttribute('id', element);
     li.textContent = element;
     li.setAttribute(
       'onclick',
@@ -115,7 +113,6 @@ export function displayUstensilsField(ustensilsList) {
 
   ustensilsArray.forEach((element) => {
     const li = document.createElement('li');
-    li.setAttribute('id', element);
     li.textContent = element;
     li.setAttribute(
       'onclick',
