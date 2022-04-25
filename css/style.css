@@ -199,14 +199,16 @@ header {
 }
 
 .recipe-card {
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
   height: 364px;
   background-color: #e7e7e7;
   border-radius: 5px;
 }
 
 .recipe-card-header img {
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
   height: 178px;
 }
 
@@ -244,11 +246,15 @@ header {
   overflow-y: hidden;
   height: 178px;
   padding-top: 5px;
+  flex-wrap: wrap;
 }
 
 .card-body ul {
   list-style: none;
   padding: 0px 5px;
+  max-height: 109px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .card-body p {
@@ -261,3 +267,4 @@ header {
   overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
+
